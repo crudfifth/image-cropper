@@ -1,0 +1,22 @@
+{
+  "rewrites": [
+    {
+      "source": "/test_rewrite",
+      "destination": "https://www.google.com/"
+    },
+    {
+      "source": "(.*?/assets/.*)",
+      "destination": "$1"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/test_redirect",
+      "destination": "/co2",
+      "statusCode": 302
+    }
+  ],
+  "git": {
+    "deploymentEnabled": false
+  }
+}

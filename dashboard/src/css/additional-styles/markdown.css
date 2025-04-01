@@ -1,0 +1,59 @@
+.markdown-body {
+  @apply text-base text-gray-900;
+}
+
+.markdown-body h1 {
+  @apply text-2xl font-bold mt-2 mb-1 text-center;
+}
+
+.markdown-body h2 {
+  @apply text-xl font-bold mt-2 mb-1 ml-2;
+}
+
+.markdown-body h3 {
+  @apply text-lg font-bold mt-2 mb-1;
+}
+
+.markdown-body h4 {
+  @apply text-base font-bold mt-2 mb-1;
+}
+
+.markdown-body h5 {
+  @apply text-sm font-bold mt-2 mb-1;
+}
+
+.markdown-body h6 {
+  @apply text-xs font-bold mt-2 mb-1;
+}
+
+.markdown-body p {
+  @apply m-4;
+}
+
+.markdown-body a {
+  @apply text-blue-500 underline;
+}
+
+.markdown-body code {
+  @apply bg-gray-100 rounded px-1;
+}
+
+.markdown-body pre {
+  @apply bg-gray-200 rounded p-2;
+}
+
+.markdown-body ol {
+  @apply list-decimal pl-10 space-y-2;
+}
+
+.markdown-body ul {
+  @apply list-disc list-inside;
+}
+
+.markdown-body ul li {
+  @apply pl-4 text-base text-gray-700;
+}
+
+.markdown-body blockquote {
+  @apply border-l-4 border-gray-200 pl-4 italic;
+}

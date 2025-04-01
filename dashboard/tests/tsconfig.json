@@ -1,0 +1,16 @@
+{
+  "include": ["./**/*"],
+  "compilerOptions": {
+    "outDir": "../dist-tests",
+    "types": ["vitest/globals"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["../src/*"],
+      "@components/*": ["src/components-new/*"],
+      "@icons/*": ["src/components-new/common/presenters/icons/*"],
+      "@charts/*": ["src/components-new/common/presenters/charts/*"],
+      "@buttons/*": ["src/components-new/common/presenters/buttons/*"],
+      "@inputs/*": ["src/components-new/common/presenters/inputs/*"]
+    }
+  }
+}

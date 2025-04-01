@@ -1,0 +1,10 @@
+@media print {
+  main {
+    color: #f00;
+  }
+  .test {
+    opacity: 1;
+    background-color: #00f !important;
+    color: blueviolet;
+  }
+}
