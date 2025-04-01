@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "docs:build": "redoc-cli bundle app/source/schema.yml -o app/source/schema.html"
+  },
+  "dependencies": {
+    "redoc-cli": "^0.13.21"
+  }
+}

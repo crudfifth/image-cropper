@@ -1,0 +1,10 @@
+ENV_TYPE_ELECTRICITY = '電気使用量'
+ENV_TYPE_WATER = '水使用量'
+ENV_TYPE_FUEL = '燃料使用量'
+DATA_TYPE_ELECTRICITY = '電気'
+DATA_TYPE_WATER = '水'
+DATA_TYPE_FUEL = '燃料'
+DATA_TYPE_CO2 = 'CO2'
+
+SENDER_EMAIL = 'ihi-pushlog@ihi-green-pf.com'
+REPLY_TO_EMAIL = 'hatano1170@ihi-g.com'

@@ -1,0 +1,24 @@
+django
+djangorestframework
+djangorestframework-simplejwt
+django-cors-headers
+django-filter
+django-rest-passwordreset
+uritemplate
+pyyaml
+pillow
+coreapi
+drf-spectacular
+apscheduler
+django-import-export
+tzlocal==2.1
+django-environ
+psycopg2-binary==2.9.3
+django-admin-rangefilter==0.11.2
+pandas
+openpyxl
+cryptography
+django-axes # for login attempts
+sendgrid
+sympy
+djangorestframework-csv

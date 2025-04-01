@@ -1,0 +1,12 @@
+{% extends "admin/base_site.html" %}
+
+   {% block content %}
+     <h1>データ削除</h1>
+     日付と時間を指定してください<br>
+     指定した日時以前のデータが削除されます<br>
+     <form method="post">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <button type="submit">Delete</button>
+     </form>
+   {% endblock %}

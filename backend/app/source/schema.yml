@@ -1,0 +1,4785 @@
+components:
+  schemas:
+    Company:
+      properties:
+        economic_activity_unit:
+          format: uuid
+          nullable: true
+          title: "\u7D4C\u6E08\u6D3B\u52D5\u5358\u4F4D"
+          type: string
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        name:
+          maxLength: 30
+          title: "\u4F01\u696D\u540D"
+          type: string
+      required:
+      - id
+      - name
+      type: object
+    DailyEconomicActivityAmount:
+      properties:
+        activity_date:
+          format: date
+          title: "\u6D3B\u52D5\u65E5"
+          type: string
+        activity_type_id:
+          format: uuid
+          title: "\u7D4C\u6E08\u6D3B\u52D5\u91CF\u7A2E\u5225ID"
+          type: string
+        value:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u6D3B\u52D5\u91CF"
+          type: integer
+      required:
+      - activity_date
+      - activity_type_id
+      - value
+      type: object
+    DailyRevenue:
+      properties:
+        daily_revenue:
+          format: int64
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          nullable: true
+          title: "1\u65E5\u3042\u305F\u308A\u306E\u58F2\u4E0A"
+          type: integer
+      type: object
+    DataPerDate:
+      properties:
+        co2_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "CO2/\u6599\u91D1(\u5186)"
+          type: integer
+        co2_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "CO2/\u53D6\u5F97\u5024(t-CO2)"
+          type: number
+        date:
+          maximum: 31
+          minimum: 1
+          title: "\u65E5"
+          type: integer
+        electrical_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u6599\u91D1(\u5186)"
+          type: integer
+        electrical_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u53D6\u5F97\u5024(kWh)"
+          type: number
+        energy_saving_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u7701\u30A8\u30CD\u5275\u51FA(t-CO2)"
+          type: number
+        fuel_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u6599\u91D1(\u5186)"
+          type: integer
+        fuel_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u53D6\u5F97\u5024(m3)"
+          type: number
+        get_data_date:
+          format: date-time
+          title: "\u53D6\u5F97\u65E5\u6642"
+          type: string
+        renewal_energy_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u518D\u30A8\u30CD\u5275\u51FA(t-CO2)"
+          type: number
+        utility_costs:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u5149\u71B1\u8CBB(\u5186)"
+          type: integer
+        water_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u6599\u91D1(\u5186)"
+          type: integer
+        water_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u53D6\u5F97\u5024(m3)"
+          type: number
+      type: object
+    DataPerHour:
+      properties:
+        co2_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "CO2/\u6599\u91D1(\u5186)"
+          type: integer
+        co2_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "CO2/\u53D6\u5F97\u5024(t-CO2)"
+          type: number
+        date:
+          maximum: 31
+          minimum: 1
+          title: "\u65E5"
+          type: integer
+        electrical_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u6599\u91D1(\u5186)"
+          type: integer
+        electrical_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u53D6\u5F97\u5024(kWh)"
+          type: number
+        fuel_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u6599\u91D1(\u5186)"
+          type: integer
+        fuel_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u53D6\u5F97\u5024(m3)"
+          type: number
+        get_data_date:
+          format: date-time
+          title: "\u53D6\u5F97\u65E5\u6642"
+          type: string
+        hour:
+          maximum: 23
+          minimum: 0
+          title: "\u6642\u9593"
+          type: integer
+        minute:
+          maximum: 59
+          minimum: 0
+          title: "\u5206"
+          type: integer
+        month:
+          maximum: 12
+          minimum: 1
+          title: "\u6708"
+          type: integer
+        utility_costs:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u5149\u71B1\u8CBB(\u5186)"
+          type: integer
+        water_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u6599\u91D1(\u5186)"
+          type: integer
+        water_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u53D6\u5F97\u5024(m3)"
+          type: number
+        year:
+          maximum: 2100
+          minimum: 2020
+          title: "\u5E74"
+          type: integer
+      type: object
+    DataPerMonth:
+      properties:
+        co2_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "CO2/\u6599\u91D1(\u5186)"
+          type: integer
+        co2_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "CO2/\u53D6\u5F97\u5024(t-CO2)"
+          type: number
+        electrical_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u6599\u91D1(\u5186)"
+          type: integer
+        electrical_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u53D6\u5F97\u5024(kWh)"
+          type: number
+        energy_saving_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u7701\u30A8\u30CD\u5275\u51FA(t-CO2)"
+          type: number
+        fuel_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u6599\u91D1(\u5186)"
+          type: integer
+        fuel_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u53D6\u5F97\u5024(m3)"
+          type: number
+        get_data_date:
+          format: date-time
+          title: "\u53D6\u5F97\u65E5\u6642"
+          type: string
+        month:
+          maximum: 12
+          minimum: 1
+          title: "\u6708"
+          type: integer
+        renewal_energy_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u518D\u30A8\u30CD\u5275\u51FA(t-CO2)"
+          type: number
+        utility_costs:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u5149\u71B1\u8CBB(\u5186)"
+          type: integer
+        water_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u6599\u91D1(\u5186)"
+          type: integer
+        water_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u53D6\u5F97\u5024(m3)"
+          type: number
+      type: object
+    DataPerYear:
+      properties:
+        co2_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "CO2/\u6599\u91D1(\u5186)"
+          type: integer
+        co2_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "CO2/\u53D6\u5F97\u5024(t-CO2)"
+          type: number
+        electrical_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u6599\u91D1(\u5186)"
+          type: integer
+        electrical_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u53D6\u5F97\u5024(kWh)"
+          type: number
+        energy_saving_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u7701\u30A8\u30CD\u5275\u51FA(t-CO2)"
+          type: number
+        fuel_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u6599\u91D1(\u5186)"
+          type: integer
+        fuel_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u53D6\u5F97\u5024(m3)"
+          type: number
+        get_data_date:
+          format: date-time
+          title: "\u53D6\u5F97\u65E5\u6642"
+          type: string
+        renewal_energy_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u518D\u30A8\u30CD\u5275\u51FA(t-CO2)"
+          type: number
+        utility_costs:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u5149\u71B1\u8CBB(\u5186)"
+          type: integer
+        water_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u6599\u91D1(\u5186)"
+          type: integer
+        water_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u53D6\u5F97\u5024(m3)"
+          type: number
+        year:
+          maximum: 2100
+          minimum: 2020
+          title: "\u5E74"
+          type: integer
+      type: object
+    Device:
+      properties:
+        created_at:
+          format: date-time
+          readOnly: true
+          title: "\u4F5C\u6210\u65E5\u6642"
+          type: string
+        data_source_name:
+          maxLength: 255
+          nullable: true
+          title: "\u30C7\u30FC\u30BF\u53D6\u5F97\u5BFE\u8C61\u540D"
+          type: string
+        device_number:
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: "\u30C7\u30D0\u30A4\u30B9\u578B\u756A"
+          type: integer
+        device_type:
+          $ref: '#/components/schemas/DeviceType'
+        device_type_id:
+          format: uuid
+          nullable: true
+          title: "\u30C7\u30D0\u30A4\u30B9\u306E\u7A2E\u985EID"
+          type: string
+        device_unit_price:
+          readOnly: true
+          type: string
+        economic_activity_type:
+          $ref: '#/components/schemas/EconomicActivityType'
+        economic_activity_type_id:
+          format: uuid
+          nullable: true
+          title: "\u7D4C\u6E08\u6D3B\u52D5\u91CF\u7A2E\u5225ID"
+          type: string
+        enable_data_collection:
+          title: "\u30C7\u30FC\u30BF\u53CE\u96C6\u3092\u6709\u52B9\u306B\u3059\u308B\
+            \u304B"
+          type: boolean
+        gateway:
+          $ref: '#/components/schemas/Gateway'
+        gateway_id:
+          nullable: true
+          title: "\u30B2\u30FC\u30C8\u30A6\u30A7\u30A4ID"
+          type: string
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        input_source:
+          type: string
+        m_device:
+          $ref: '#/components/schemas/MDevice'
+        m_device_id:
+          format: uuid
+          nullable: true
+          title: "\u30DE\u30B9\u30BF\u30C7\u30D0\u30A4\u30B9ID"
+          type: string
+        name:
+          maxLength: 255
+          nullable: true
+          title: "\u30C7\u30D0\u30A4\u30B9\u540D"
+          type: string
+        pushlog_unique_id:
+          maxLength: 255
+          nullable: true
+          title: "PUSHLOG\u306E\u30E6\u30CB\u30FC\u30AFID"
+          type: string
+        unit:
+          $ref: '#/components/schemas/Unit'
+        unit_id:
+          nullable: true
+          title: "\u5358\u4F4DID"
+          type: integer
+      required:
+      - created_at
+      - device_unit_price
+      - economic_activity_type
+      - id
+      type: object
+    DeviceDataPerDate:
+      properties:
+        co2_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "CO2/\u6599\u91D1(\u5186)"
+          type: integer
+        co2_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "CO2/\u53D6\u5F97\u5024(t-CO2)"
+          type: number
+        date:
+          maximum: 31
+          minimum: 1
+          title: "\u65E5"
+          type: integer
+        device_id:
+          allOf:
+          - $ref: '#/components/schemas/Device'
+          readOnly: true
+        electrical_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u6599\u91D1(\u5186)"
+          type: integer
+        electrical_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u53D6\u5F97\u5024(kWh)"
+          type: number
+        energy_saving_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u7701\u30A8\u30CD\u5275\u51FA(t-CO2)"
+          type: number
+        fuel_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u6599\u91D1(\u5186)"
+          type: integer
+        fuel_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u53D6\u5F97\u5024(m3)"
+          type: number
+        get_data_date:
+          format: date-time
+          title: "\u53D6\u5F97\u65E5\u6642"
+          type: string
+        renewal_energy_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u518D\u30A8\u30CD\u5275\u51FA(t-CO2)"
+          type: number
+        utility_costs:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u5149\u71B1\u8CBB(\u5186)"
+          type: integer
+        water_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u6599\u91D1(\u5186)"
+          type: integer
+        water_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u53D6\u5F97\u5024(m3)"
+          type: number
+      required:
+      - device_id
+      type: object
+    DeviceDataPerHour:
+      properties:
+        co2_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "CO2/\u6599\u91D1(\u5186)"
+          type: integer
+        co2_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "CO2/\u53D6\u5F97\u5024(t-CO2)"
+          type: number
+        date:
+          maximum: 31
+          minimum: 1
+          title: "\u65E5"
+          type: integer
+        device_id:
+          format: uuid
+          title: "\u8A2D\u5099ID"
+          type: string
+        electrical_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u6599\u91D1(\u5186)"
+          type: integer
+        electrical_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u53D6\u5F97\u5024(kWh)"
+          type: number
+        fuel_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u6599\u91D1(\u5186)"
+          type: integer
+        fuel_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u53D6\u5F97\u5024(m3)"
+          type: number
+        get_data_date:
+          format: date-time
+          title: "\u53D6\u5F97\u65E5\u6642"
+          type: string
+        hour:
+          maximum: 23
+          minimum: 0
+          title: "\u6642\u9593"
+          type: integer
+        minute:
+          maximum: 59
+          minimum: 0
+          title: "\u5206"
+          type: integer
+        month:
+          maximum: 12
+          minimum: 1
+          title: "\u6708"
+          type: integer
+        utility_costs:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u5149\u71B1\u8CBB(\u5186)"
+          type: integer
+        water_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u6599\u91D1(\u5186)"
+          type: integer
+        water_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u53D6\u5F97\u5024(m3)"
+          type: number
+        year:
+          maximum: 2100
+          minimum: 2020
+          title: "\u5E74"
+          type: integer
+      required:
+      - device_id
+      type: object
+    DeviceDataPerMonth:
+      properties:
+        co2_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "CO2/\u6599\u91D1(\u5186)"
+          type: integer
+        co2_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "CO2/\u53D6\u5F97\u5024(t-CO2)"
+          type: number
+        device_id:
+          allOf:
+          - $ref: '#/components/schemas/Device'
+          readOnly: true
+        electrical_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u6599\u91D1(\u5186)"
+          type: integer
+        electrical_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u53D6\u5F97\u5024(kWh)"
+          type: number
+        energy_saving_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u7701\u30A8\u30CD\u5275\u51FA(t-CO2)"
+          type: number
+        fuel_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u6599\u91D1(\u5186)"
+          type: integer
+        fuel_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u53D6\u5F97\u5024(m3)"
+          type: number
+        get_data_date:
+          format: date-time
+          title: "\u53D6\u5F97\u65E5\u6642"
+          type: string
+        month:
+          maximum: 12
+          minimum: 1
+          title: "\u6708"
+          type: integer
+        renewal_energy_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u518D\u30A8\u30CD\u5275\u51FA(t-CO2)"
+          type: number
+        utility_costs:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u5149\u71B1\u8CBB(\u5186)"
+          type: integer
+        water_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u6599\u91D1(\u5186)"
+          type: integer
+        water_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u53D6\u5F97\u5024(m3)"
+          type: number
+      required:
+      - device_id
+      type: object
+    DeviceDataPerYear:
+      properties:
+        co2_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "CO2/\u6599\u91D1(\u5186)"
+          type: integer
+        co2_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "CO2/\u53D6\u5F97\u5024(t-CO2)"
+          type: number
+        device_id:
+          allOf:
+          - $ref: '#/components/schemas/Device'
+          readOnly: true
+        electrical_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u6599\u91D1(\u5186)"
+          type: integer
+        electrical_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u53D6\u5F97\u5024(kWh)"
+          type: number
+        energy_saving_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u7701\u30A8\u30CD\u5275\u51FA(t-CO2)"
+          type: number
+        fuel_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u6599\u91D1(\u5186)"
+          type: integer
+        fuel_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u53D6\u5F97\u5024(m3)"
+          type: number
+        get_data_date:
+          format: date-time
+          title: "\u53D6\u5F97\u65E5\u6642"
+          type: string
+        renewal_energy_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u518D\u30A8\u30CD\u5275\u51FA(t-CO2)"
+          type: number
+        utility_costs:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u5149\u71B1\u8CBB(\u5186)"
+          type: integer
+        water_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u6599\u91D1(\u5186)"
+          type: integer
+        water_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u53D6\u5F97\u5024(m3)"
+          type: number
+        year:
+          maximum: 2100
+          minimum: 2020
+          title: "\u5E74"
+          type: integer
+      required:
+      - device_id
+      type: object
+    DeviceType:
+      properties:
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        name:
+          maxLength: 255
+          title: "\u30C7\u30D0\u30A4\u30B9\u306E\u7A2E\u985E\u540D"
+          type: string
+      required:
+      - id
+      - name
+      type: object
+    DeviceUnitPrice:
+      properties:
+        co2_unit_price:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "CO2(\u5186/t-CO2)"
+          type: integer
+        device:
+          format: uuid
+          title: "\u30C7\u30D0\u30A4\u30B9"
+          type: string
+        electric_unit_co2:
+          format: double
+          title: "\u96FB\u6C17(t-CO2/kWh)"
+          type: number
+        electric_unit_price:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u96FB\u6C17(\u5186/kWh)"
+          type: integer
+        fuel_unit_co2:
+          format: double
+          title: "\u71C3\u6599(t-CO2/m3)"
+          type: number
+        fuel_unit_price:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u71C3\u6599(\u5186/m3)"
+          type: integer
+        id:
+          readOnly: true
+          type: integer
+        water_unit_price:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u6C34(\u5186/m3)"
+          type: integer
+      required:
+      - device
+      - id
+      type: object
+    EconomicActivityType:
+      properties:
+        created_at:
+          format: date-time
+          readOnly: true
+          title: "\u4F5C\u6210\u65E5\u6642"
+          type: string
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        latest_date:
+          readOnly: true
+          type: string
+        latest_value:
+          readOnly: true
+          type: string
+        name:
+          maxLength: 100
+          type: string
+        updated_at:
+          format: date-time
+          readOnly: true
+          title: "\u66F4\u65B0\u65E5\u6642"
+          type: string
+      required:
+      - created_at
+      - id
+      - latest_date
+      - latest_value
+      - name
+      - updated_at
+      type: object
+    EconomicActivityUnit:
+      properties:
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        name:
+          maxLength: 100
+          type: string
+      required:
+      - id
+      - name
+      type: object
+    Email:
+      properties:
+        email:
+          format: email
+          type: string
+      required:
+      - email
+      type: object
+    EnvirontmentalType:
+      properties:
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        name:
+          maxLength: 255
+          title: "\u74B0\u5883\u306E\u7A2E\u985E\u540D"
+          type: string
+      required:
+      - id
+      - name
+      type: object
+    Gateway:
+      properties:
+        created_at:
+          format: date-time
+          readOnly: true
+          title: "\u4F5C\u6210\u65E5\u6642"
+          type: string
+        firmware_version:
+          maxLength: 50
+          type: string
+        id:
+          readOnly: true
+          type: string
+        is_activated:
+          type: boolean
+        model:
+          maxLength: 50
+          type: string
+        name:
+          maxLength: 100
+          type: string
+        updated_at:
+          format: date-time
+          readOnly: true
+          title: "\u66F4\u65B0\u65E5\u6642"
+          type: string
+        user_id:
+          format: uuid
+          title: "\u30E6\u30FC\u30B6\u30FCID"
+          type: string
+      required:
+      - created_at
+      - firmware_version
+      - id
+      - model
+      - name
+      - updated_at
+      - user_id
+      type: object
+    JCreditApplication:
+      properties:
+        application_date:
+          format: date
+          title: "\u4F1A\u54E1\u57FA\u672C\u60C5\u5831:\u5165\u4F1A\u7533\u8FBC\u65E5"
+          type: string
+        base_efficiency_of_standard_equipment_percentage:
+          format: double
+          title: "\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u8A2D\u5099\u60C5\u5831:\u6A19\
+            \u6E96\u7684\u306A\u8A2D\u5099\u306E\u52B9\u7387\uFF08\uFF05\uFF09"
+          type: number
+        base_efficiency_percentage:
+          format: double
+          title: "\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u8A2D\u5099\u60C5\u5831:\u52B9\
+            \u7387\uFF08\uFF05\uFF09"
+          type: number
+        base_fuel_type:
+          maxLength: 255
+          title: "\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u8A2D\u5099\u60C5\u5831:\u71C3\
+            \u6599\u7A2E"
+          type: string
+        base_installation_date:
+          format: date
+          title: "\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u8A2D\u5099\u60C5\u5831:\u5C0E\
+            \u5165\u65E5"
+          type: string
+        base_legal_service_life_years:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u8A2D\u5099\u60C5\u5831:\u6CD5\
+            \u5B9A\u8010\u7528\u5E74\u6570\uFF08\u5E74\uFF09"
+          type: integer
+        base_manufacturer_name:
+          maxLength: 255
+          title: "\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u8A2D\u5099\u60C5\u5831:\u30E1\
+            \u30FC\u30AB\u30FC\u540D"
+          type: string
+        base_model:
+          maxLength: 255
+          title: "\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u8A2D\u5099\u60C5\u5831:\u578B\
+            \u5F0F"
+          type: string
+        base_operation_end_date:
+          format: date
+          title: "\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u8A2D\u5099\u60C5\u5831:\u7A3C\
+            \u52D5\u7D42\u4E86\u65E5"
+          type: string
+        base_output:
+          maxLength: 255
+          title: "\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u8A2D\u5099\u60C5\u5831:\u51FA\
+            \u529B"
+          type: string
+        base_quantity:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u8A2D\u5099\u60C5\u5831:\u53F0\
+            \u6570"
+          type: integer
+        base_unit_heat_gen_of_fossil_fuel_in_base_boiler:
+          maxLength: 255
+          title: "\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u8A2D\u5099\u60C5\u5831:\u30D9\
+            \u30FC\u30B9\u30E9\u30A4\u30F3\u306E\u30DC\u30A4\u30E9\u30FC\u3067\u4F7F\
+            \u7528\u3059\u308B\u5316\u77F3\u71C3\u6599\u306E\u5358\u4F4D\u767A\u71B1\
+            \u91CF\uFF08GJ/\uFF54\uFF09"
+          type: string
+        base_years_of_operation:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u8A2D\u5099\u60C5\u5831:\u7A3C\
+            \u52D5\u5E74\u6570"
+          type: integer
+        certify_end_date:
+          format: date
+          title: "\u57FA\u6E96\u65E5:\u7D42\u4E86\u65E5"
+          type: string
+        certify_start_date:
+          format: date
+          title: "\u57FA\u6E96\u65E5:\u958B\u59CB\u65E5"
+          type: string
+        co2_per_unit_heat_ge_fuels_in_base_boiler:
+          format: double
+          title: ":\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u306E\u30DC\u30A4\u30E9\u30FC\
+            \u3067\u4F7F\u7528\u3059\u308B\u5316\u77F3\u71C3\u6599\u306E\u5358\u4F4D\
+            \u767A\u71B1\u91CF\u5F53\u305F\u308A\u306ECO2\u6392\u51FA\u4FC2\u6570\uFF08\
+            \uFF54CO2/GJ\uFF09"
+          type: number
+        co2_per_unit_heat_ge_fuels_used_in_boiler_after_exec:
+          format: double
+          title: ":\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u5B9F\u65BD\u5F8C\u306E\u30DC\
+            \u30A4\u30E9\u30FC\u3067\u4F7F\u7528\u3059\u308B\u5316\u77F3\u71C3\u6599\
+            \u306E\u5358\u4F4D\u767A\u71B1\u91CF\u5F53\u305F\u308A\u306ECO2\u6392\u51FA\
+            \u4FC2\u6570\uFF08\uFF54CO2/GJ\uFF09"
+          type: number
+        energy_conservation_law_specified_business_number:
+          maxLength: 255
+          title: "\u4F1A\u54E1\u57FA\u672C\u60C5\u5831:\u7701\u30A8\u30CD\u6CD5\u7279\
+            \u5B9A\u4E8B\u696D\u8005\u756A\u53F7"
+          type: string
+        eval_baseline_fuel_unit_price_per_month:
+          format: double
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\
+            \u71C3\u6599\u5358\u4FA1\uFF08\u5186/Nm3\u7B49/\u6708\uFF09"
+          type: number
+        eval_documentation:
+          maxLength: 255
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\u78BA\u8A8D\u66F8\u985E"
+          type: string
+        eval_domestically_implemented_in_japan:
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\u25CB\uFF1A\u74B0\u5883\u7701\u3067\
+            \u306F\u306A\u3044\u53C8\u306F\u88DC\u52A9\u91D1\u3092\u5229\u7528\u3057\
+            \u3066\u3044\u306A\u3044\u3002\xD7\uFF1A\u74B0\u5883\u7701"
+          type: boolean
+        eval_existing_maintenance_cost_per_year:
+          format: double
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\u65E2\u8A2D\u30E1\u30F3\u30C6\u30CA\
+            \u30F3\u30B9\u8CBB\uFF08\u5186/\u5E74\uFF09"
+          type: number
+        eval_granting_organization_of_subsidy:
+          maxLength: 255
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\u88DC\u52A9\u91D1\u4EA4\u4ED8\u56E3\
+            \u4F53"
+          type: string
+        eval_investment_recovery_years:
+          format: double
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\u6295\u8CC7\u56DE\u53CE\u5E74\u6570\
+            \uFF08\u5E74\uFF09"
+          type: number
+        eval_net_investment_amount:
+          format: double
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\u7D14\u6295\u8CC7\u984D\uFF08\u5186\
+            \uFF09"
+          type: number
+        eval_post_implementation_fuel_unit_price_per_month:
+          format: double
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\uFF30J\u5B9F\u65BD\u5F8C\u71C3\u6599\
+            \u5358\u4FA1\uFF08\u5186/Nm3\u7B49/\u6708\uFF09"
+          type: number
+        eval_post_implementation_maintenance_cost_per_year:
+          format: double
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:PJ\u5B9F\u65BD\u5F8C\u30E1\u30F3\u30C6\
+            \u30CA\u30F3\u30B9\u8CBB\uFF08\u5186/\u5E74\uFF09"
+          type: number
+        eval_running_cost_after_implementation:
+          format: double
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\u5B9F\u65BD\u5F8C\u30E9\u30F3\u30CB\
+            \u30F3\u30B0\u30B3\u30B9\u30C8\uFF08\u5186\uFF09"
+          type: number
+        eval_running_cost_before_implementation:
+          format: double
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\u5B9F\u65BD\u524D\u30E9\u30F3\u30CB\
+            \u30F3\u30B0\u30B3\u30B9\u30C8\uFF08\u5186\uFF09"
+          type: number
+        eval_subsidy_amount:
+          format: double
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\u88DC\u52A9\u91D1\u984D\uFF08\u5186\
+            \uFF09"
+          type: number
+        eval_subsidy_name:
+          maxLength: 255
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\u88DC\u52A9\u91D1\u540D\u79F0"
+          type: string
+        eval_total_investment_amount:
+          format: double
+          title: "\u8FFD\u52A0\u6027\u8A55\u4FA1:\u7DCF\u6295\u8CC7\u984D\uFF08\u5186\
+            \uFF09"
+          type: number
+        global_warming_countermeasures_specified_emitter_code:
+          maxLength: 255
+          title: "\u4F1A\u54E1\u57FA\u672C\u60C5\u5831:\u6E29\u5BFE\u6CD5\u7279\u5B9A\
+            \u6392\u51FA\u8005\u30B3\u30FC\u30C9"
+          type: string
+        installation_address:
+          maxLength: 255
+          title: "\u4F1A\u54E1\u57FA\u672C\u60C5\u5831:\u8A2D\u7F6E\u5834\u6240\u4F4F\
+            \u6240 (\u5FC5\u305A\u90FD\u9053\u5E9C\u770C\u540D\u304B\u3089\u8A18\u8F09\
+            )"
+          type: string
+        installation_postal_code:
+          maxLength: 10
+          title: "\u4F1A\u54E1\u57FA\u672C\u60C5\u5831:\u8A2D\u7F6E\u5834\u6240\u90F5\
+            \u4FBF\u756A\u53F7(\u4EFB\u610F)"
+          type: string
+        keidanren_carbon_neutral_participation:
+          title: "\u4F1A\u54E1\u57FA\u672C\u60C5\u5831:\u7D4C\u56E3\u9023\u30AB\u30FC\
+            \u30DC\u30F3\u30CB\u30E5\u30FC\u30C8\u30E9\u30EB\u884C\u52D5\u8A08\u753B\
+            \u3078\u306E\u53C2\u52A0"
+          type: boolean
+        member_address:
+          maxLength: 255
+          title: "\u4F1A\u54E1\u57FA\u672C\u60C5\u5831:\u4F1A\u54E1\u4F4F\u6240 (\u4EFB\
+            \u610F)"
+          type: string
+        member_name:
+          maxLength: 255
+          title: "\u4F1A\u54E1\u57FA\u672C\u60C5\u5831:\u4F1A\u54E1\u540D"
+          type: string
+        member_phone_number:
+          maxLength: 20
+          title: "\u4F1A\u54E1\u57FA\u672C\u60C5\u5831:\u4F1A\u54E1\u96FB\u8A71\u756A\
+            \u53F7(\u4EFB\u610F)"
+          type: string
+        member_postal_code:
+          maxLength: 10
+          title: "\u4F1A\u54E1\u57FA\u672C\u60C5\u5831:\u4F1A\u54E1\u90F5\u4FBF\u756A\
+            \u53F7(\u4EFB\u610F)"
+          type: string
+        monitoring_classification:
+          maxLength: 255
+          title: "\u30E2\u30CB\u30BF\u30EA\u30F3\u30B0\u6E2C\u5B9A\u7D50\u679C:\u5206\
+            \u985E"
+          type: string
+        monitoring_final_value:
+          maxLength: 255
+          title: "\u30E2\u30CB\u30BF\u30EA\u30F3\u30B0\u6E2C\u5B9A\u7D50\u679C:\u6700\
+            \u7D42\u7684\u306A\u30E2\u30CB\u30BF\u30EA\u30F3\u30B0\u5024"
+          type: string
+        monitoring_measurement_error_rate_in_c:
+          maxLength: 255
+          title: "\u30E2\u30CB\u30BF\u30EA\u30F3\u30B0\u6E2C\u5B9A\u7D50\u679C:\u5206\
+            \u985EC\u306B\u304A\u3044\u3066\u8A08\u91CF\u5668\u3092\u7528\u3044\u305F\
+            \u5834\u5408\u306E\u8AA4\u5DEE\u7387\uFF08%\uFF09"
+          type: string
+        monitoring_measurement_value_of_fuel_consumption:
+          maxLength: 255
+          title: "\u30E2\u30CB\u30BF\u30EA\u30F3\u30B0\u6E2C\u5B9A\u7D50\u679C:\u30E2\
+            \u30CB\u30BF\u30EA\u30F3\u30B0\u6E2C\u5B9A\u5024\uFF08\u71C3\u6599\u4F7F\
+            \u7528\u91CF\uFF09\uFF08t\u3001kl\u3001\u5343Nm3\uFF09"
+          type: string
+        monitoring_period_in_months:
+          format: double
+          title: "\u30E2\u30CB\u30BF\u30EA\u30F3\u30B0\u6E2C\u5B9A\u7D50\u679C:\u30E2\
+            \u30CB\u30BF\u30EA\u30F3\u30B0\u671F\u9593\uFF08\u30F6\u6708\uFF09"
+          type: number
+        operating_start_date:
+          format: date
+          title: "\u57FA\u6E96\u65E5:\u7A3C\u52D5\u958B\u59CB\u65E5"
+          type: string
+        requirement_additivity:
+          title: "\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u767B\u9332\u8981\u4EF6\u306E\
+            \u53EF\u5426:\u8FFD\u52A0\u6027"
+          type: boolean
+        requirement_certification_start_date:
+          title: "\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u767B\u9332\u8981\u4EF6\u306E\
+            \u53EF\u5426:\u8A8D\u8A3C\u958B\u59CB\u65E5"
+          type: boolean
+        requirement_equipment_efficiency_higher_than_standard:
+          title: "\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u767B\u9332\u8981\u4EF6\u306E\
+            \u53EF\u5426:PJ\u5B9F\u65BD\u5F8C\u8A2D\u5099\u304C\u6A19\u6E96\u7684\u306A\
+            \u8A2D\u5099\u52B9\u7387\u3088\u308A\u826F\u3044\u304B"
+          type: boolean
+        requirement_implemented_in_japan:
+          title: "\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u767B\u9332\u8981\u4EF6\u306E\
+            \u53EF\u5426:\u65E5\u672C\u56FD\u5185\u3067\u5B9F\u65BD\u3055\u308C\u308B"
+          type: boolean
+        requirement_project_execution_date:
+          title: "\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u767B\u9332\u8981\u4EF6\u306E\
+            \u53EF\u5426:\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u5B9F\u65BD\u65E5"
+          type: boolean
+        unit_heat_gen_of_fossil_fuels_in_base_boiler:
+          maxLength: 255
+          title: ":\u30D9\u30FC\u30B9\u30E9\u30A4\u30F3\u306E\u30DC\u30A4\u30E9\u30FC\
+            \u3067\u4F7F\u7528\u3059\u308B\u5316\u77F3\u71C3\u6599\u306E\u5358\u4F4D\
+            \u767A\u71B1\u91CF\uFF08GJ/\uFF54,GJ/\u5343Nm3\u7B49\uFF09"
+          type: string
+        unit_heat_gen_of_fuel_used_in_boiler_after_project_exec:
+          maxLength: 255
+          title: ":\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u5B9F\u65BD\u5F8C\u306E\u30DC\
+            \u30A4\u30E9\u30FC\u3067\u4F7F\u7528\u3059\u308B\u71C3\u6599\u306E\u5358\
+            \u4F4D\u767A\u71B1\u91CF\uFF08GJ/\uFF54,GJ/\u5343Nm3\u7B49\uFF09"
+          type: string
+        updated_efficiency_percentage:
+          format: double
+          title: "\u66F4\u65B0\u5F8C\u306E\u8A2D\u5099\u60C5\u5831:\u52B9\u7387\uFF08\
+            \uFF05\uFF09"
+          type: number
+        updated_fuel_type:
+          maxLength: 255
+          title: "\u66F4\u65B0\u5F8C\u306E\u8A2D\u5099\u60C5\u5831:\u71C3\u6599\u7A2E"
+          type: string
+        updated_manufacturer_name:
+          maxLength: 255
+          title: "\u66F4\u65B0\u5F8C\u306E\u8A2D\u5099\u60C5\u5831:\u30E1\u30FC\u30AB\
+            \u30FC"
+          type: string
+        updated_model:
+          maxLength: 255
+          title: "\u66F4\u65B0\u5F8C\u306E\u8A2D\u5099\u60C5\u5831:\u578B\u5F0F"
+          type: string
+        updated_output:
+          maxLength: 255
+          title: "\u66F4\u65B0\u5F8C\u306E\u8A2D\u5099\u60C5\u5831:\u51FA\u529B"
+          type: string
+        updated_quantity:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u66F4\u65B0\u5F8C\u306E\u8A2D\u5099\u60C5\u5831:\u53F0\u6570"
+          type: integer
+        updated_unique_number:
+          maxLength: 255
+          title: "\u66F4\u65B0\u5F8C\u306E\u8A2D\u5099\u60C5\u5831:\u56FA\u6709\u756A\
+            \u53F7 (\u88FD\u9020\u756A\u53F7\u7B49)"
+          type: string
+        updated_unit_heat_gen_of_fossil_fuel_in_base_boiler:
+          maxLength: 255
+          title: "\u66F4\u65B0\u5F8C\u306E\u8A2D\u5099\u60C5\u5831:\u30D9\u30FC\u30B9\
+            \u30E9\u30A4\u30F3\u306E\u30DC\u30A4\u30E9\u30FC\u3067\u4F7F\u7528\u3059\
+            \u308B\u5316\u77F3\u71C3\u6599\u306E\u5358\u4F4D\u767A\u71B1\u91CF\uFF08\
+            GJ/\uFF54\uFF09"
+          type: string
+      type: object
+    MDevice:
+      properties:
+        device_number:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u30C7\u30D0\u30A4\u30B9\u578B\u756A"
+          type: integer
+        device_type:
+          $ref: '#/components/schemas/DeviceType'
+        environmental_type:
+          $ref: '#/components/schemas/EnvirontmentalType'
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        name:
+          maxLength: 255
+          title: "\u30C7\u30D0\u30A4\u30B9\u540D"
+          type: string
+      required:
+      - device_number
+      - device_type
+      - environmental_type
+      - id
+      type: object
+    MonthlyCostTarget:
+      properties:
+        id:
+          readOnly: true
+          type: integer
+        month:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u6708"
+          type: integer
+        target_price:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u76EE\u6A19\u91D1\u984D"
+          type: integer
+        target_type:
+          $ref: '#/components/schemas/TargetTypeEnum'
+        target_value:
+          format: double
+          title: "\u76EE\u6A19\u5024"
+          type: number
+        user_id:
+          format: uuid
+          title: "\u30E6\u30FC\u30B6\u30FCID"
+          type: string
+        year:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u5E74"
+          type: integer
+      required:
+      - id
+      - month
+      - target_price
+      - target_type
+      - target_value
+      - user_id
+      - year
+      type: object
+    Notification:
+      properties:
+        body:
+          maxLength: 500
+          type: string
+        created_at:
+          format: date-time
+          title: "\u4F5C\u6210\u65E5\u6642"
+          type: string
+        id:
+          readOnly: true
+          type: integer
+        title:
+          maxLength: 100
+          type: string
+        updated_at:
+          format: date-time
+          readOnly: true
+          title: "\u66F4\u65B0\u65E5\u6642"
+          type: string
+        user:
+          format: uuid
+          type: string
+      required:
+      - body
+      - id
+      - title
+      - updated_at
+      - user
+      type: object
+    PaginatedNotificationList:
+      properties:
+        count:
+          example: 123
+          type: integer
+        next:
+          example: http://api.example.org/accounts/?page=4
+          format: uri
+          nullable: true
+          type: string
+        previous:
+          example: http://api.example.org/accounts/?page=2
+          format: uri
+          nullable: true
+          type: string
+        results:
+          items:
+            $ref: '#/components/schemas/Notification'
+          type: array
+      type: object
+    PasswordToken:
+      properties:
+        password:
+          title: "\u30D1\u30B9\u30EF\u30FC\u30C9"
+          type: string
+        token:
+          type: string
+      required:
+      - password
+      - token
+      type: object
+    PatchedCompany:
+      properties:
+        economic_activity_unit:
+          format: uuid
+          nullable: true
+          title: "\u7D4C\u6E08\u6D3B\u52D5\u5358\u4F4D"
+          type: string
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        name:
+          maxLength: 30
+          title: "\u4F01\u696D\u540D"
+          type: string
+      type: object
+    PatchedDailyEconomicActivityAmount:
+      properties:
+        activity_date:
+          format: date
+          title: "\u6D3B\u52D5\u65E5"
+          type: string
+        activity_type_id:
+          format: uuid
+          title: "\u7D4C\u6E08\u6D3B\u52D5\u91CF\u7A2E\u5225ID"
+          type: string
+        value:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u6D3B\u52D5\u91CF"
+          type: integer
+      type: object
+    PatchedDailyRevenue:
+      properties:
+        daily_revenue:
+          format: int64
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          nullable: true
+          title: "1\u65E5\u3042\u305F\u308A\u306E\u58F2\u4E0A"
+          type: integer
+      type: object
+    PatchedDevice:
+      properties:
+        created_at:
+          format: date-time
+          readOnly: true
+          title: "\u4F5C\u6210\u65E5\u6642"
+          type: string
+        data_source_name:
+          maxLength: 255
+          nullable: true
+          title: "\u30C7\u30FC\u30BF\u53D6\u5F97\u5BFE\u8C61\u540D"
+          type: string
+        device_number:
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+          title: "\u30C7\u30D0\u30A4\u30B9\u578B\u756A"
+          type: integer
+        device_type:
+          $ref: '#/components/schemas/DeviceType'
+        device_type_id:
+          format: uuid
+          nullable: true
+          title: "\u30C7\u30D0\u30A4\u30B9\u306E\u7A2E\u985EID"
+          type: string
+        device_unit_price:
+          readOnly: true
+          type: string
+        economic_activity_type:
+          $ref: '#/components/schemas/EconomicActivityType'
+        economic_activity_type_id:
+          format: uuid
+          nullable: true
+          title: "\u7D4C\u6E08\u6D3B\u52D5\u91CF\u7A2E\u5225ID"
+          type: string
+        enable_data_collection:
+          title: "\u30C7\u30FC\u30BF\u53CE\u96C6\u3092\u6709\u52B9\u306B\u3059\u308B\
+            \u304B"
+          type: boolean
+        gateway:
+          $ref: '#/components/schemas/Gateway'
+        gateway_id:
+          nullable: true
+          title: "\u30B2\u30FC\u30C8\u30A6\u30A7\u30A4ID"
+          type: string
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        input_source:
+          type: string
+        m_device:
+          $ref: '#/components/schemas/MDevice'
+        m_device_id:
+          format: uuid
+          nullable: true
+          title: "\u30DE\u30B9\u30BF\u30C7\u30D0\u30A4\u30B9ID"
+          type: string
+        name:
+          maxLength: 255
+          nullable: true
+          title: "\u30C7\u30D0\u30A4\u30B9\u540D"
+          type: string
+        pushlog_unique_id:
+          maxLength: 255
+          nullable: true
+          title: "PUSHLOG\u306E\u30E6\u30CB\u30FC\u30AFID"
+          type: string
+        unit:
+          $ref: '#/components/schemas/Unit'
+        unit_id:
+          nullable: true
+          title: "\u5358\u4F4DID"
+          type: integer
+      type: object
+    PatchedDeviceDataPerHour:
+      properties:
+        co2_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "CO2/\u6599\u91D1(\u5186)"
+          type: integer
+        co2_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "CO2/\u53D6\u5F97\u5024(t-CO2)"
+          type: number
+        date:
+          maximum: 31
+          minimum: 1
+          title: "\u65E5"
+          type: integer
+        device_id:
+          format: uuid
+          title: "\u8A2D\u5099ID"
+          type: string
+        electrical_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u6599\u91D1(\u5186)"
+          type: integer
+        electrical_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u96FB\u6C17/\u53D6\u5F97\u5024(kWh)"
+          type: number
+        fuel_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u6599\u91D1(\u5186)"
+          type: integer
+        fuel_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u71C3\u6599/\u53D6\u5F97\u5024(m3)"
+          type: number
+        get_data_date:
+          format: date-time
+          title: "\u53D6\u5F97\u65E5\u6642"
+          type: string
+        hour:
+          maximum: 23
+          minimum: 0
+          title: "\u6642\u9593"
+          type: integer
+        minute:
+          maximum: 59
+          minimum: 0
+          title: "\u5206"
+          type: integer
+        month:
+          maximum: 12
+          minimum: 1
+          title: "\u6708"
+          type: integer
+        utility_costs:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u5149\u71B1\u8CBB(\u5186)"
+          type: integer
+        water_price:
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u6599\u91D1(\u5186)"
+          type: integer
+        water_value:
+          format: double
+          minimum: 0
+          nullable: true
+          title: "\u6C34/\u53D6\u5F97\u5024(m3)"
+          type: number
+        year:
+          maximum: 2100
+          minimum: 2020
+          title: "\u5E74"
+          type: integer
+      type: object
+    PatchedDeviceUnitPrice:
+      properties:
+        co2_unit_price:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "CO2(\u5186/t-CO2)"
+          type: integer
+        device:
+          format: uuid
+          title: "\u30C7\u30D0\u30A4\u30B9"
+          type: string
+        electric_unit_co2:
+          format: double
+          title: "\u96FB\u6C17(t-CO2/kWh)"
+          type: number
+        electric_unit_price:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u96FB\u6C17(\u5186/kWh)"
+          type: integer
+        fuel_unit_co2:
+          format: double
+          title: "\u71C3\u6599(t-CO2/m3)"
+          type: number
+        fuel_unit_price:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u71C3\u6599(\u5186/m3)"
+          type: integer
+        id:
+          readOnly: true
+          type: integer
+        water_unit_price:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u6C34(\u5186/m3)"
+          type: integer
+      type: object
+    PatchedEconomicActivityType:
+      properties:
+        created_at:
+          format: date-time
+          readOnly: true
+          title: "\u4F5C\u6210\u65E5\u6642"
+          type: string
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        latest_date:
+          readOnly: true
+          type: string
+        latest_value:
+          readOnly: true
+          type: string
+        name:
+          maxLength: 100
+          type: string
+        updated_at:
+          format: date-time
+          readOnly: true
+          title: "\u66F4\u65B0\u65E5\u6642"
+          type: string
+      type: object
+    PatchedEconomicActivityUnit:
+      properties:
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        name:
+          maxLength: 100
+          type: string
+      type: object
+    PatchedGateway:
+      properties:
+        created_at:
+          format: date-time
+          readOnly: true
+          title: "\u4F5C\u6210\u65E5\u6642"
+          type: string
+        firmware_version:
+          maxLength: 50
+          type: string
+        id:
+          readOnly: true
+          type: string
+        is_activated:
+          type: boolean
+        model:
+          maxLength: 50
+          type: string
+        name:
+          maxLength: 100
+          type: string
+        updated_at:
+          format: date-time
+          readOnly: true
+          title: "\u66F4\u65B0\u65E5\u6642"
+          type: string
+        user_id:
+          format: uuid
+          title: "\u30E6\u30FC\u30B6\u30FCID"
+          type: string
+      type: object
+    PatchedMDevice:
+      properties:
+        device_number:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u30C7\u30D0\u30A4\u30B9\u578B\u756A"
+          type: integer
+        device_type:
+          $ref: '#/components/schemas/DeviceType'
+        environmental_type:
+          $ref: '#/components/schemas/EnvirontmentalType'
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        name:
+          maxLength: 255
+          title: "\u30C7\u30D0\u30A4\u30B9\u540D"
+          type: string
+      type: object
+    PatchedMonthlyCostTarget:
+      properties:
+        id:
+          readOnly: true
+          type: integer
+        month:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u6708"
+          type: integer
+        target_price:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u76EE\u6A19\u91D1\u984D"
+          type: integer
+        target_type:
+          $ref: '#/components/schemas/TargetTypeEnum'
+        target_value:
+          format: double
+          title: "\u76EE\u6A19\u5024"
+          type: number
+        user_id:
+          format: uuid
+          title: "\u30E6\u30FC\u30B6\u30FCID"
+          type: string
+        year:
+          maximum: 2147483647
+          minimum: -2147483648
+          title: "\u5E74"
+          type: integer
+      type: object
+    PatchedPushlogApiKey:
+      properties:
+        pushlog_api_key:
+          maxLength: 512
+          nullable: true
+          type: string
+      type: object
+    PatchedUnit:
+      properties:
+        environmental_type:
+          $ref: '#/components/schemas/EnvirontmentalType'
+        id:
+          readOnly: true
+          type: integer
+        name:
+          maxLength: 100
+          type: string
+      type: object
+    PatchedUser:
+      properties:
+        company:
+          allOf:
+          - $ref: '#/components/schemas/Company'
+          readOnly: true
+        company_id:
+          format: uuid
+          nullable: true
+          title: "\u4F01\u696D"
+          type: string
+        daily_revenue:
+          format: int64
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          nullable: true
+          title: "1\u65E5\u3042\u305F\u308A\u306E\u58F2\u4E0A"
+          type: integer
+        email:
+          format: email
+          type: string
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        is_company_admin:
+          readOnly: true
+          type: string
+        is_staff:
+          title: "\u30B9\u30BF\u30C3\u30D5\u6A29\u9650"
+          type: boolean
+        is_superuser:
+          title: "\u7BA1\u7406\u8005\u6A29\u9650"
+          type: boolean
+        password:
+          type: string
+          writeOnly: true
+        username:
+          maxLength: 30
+          title: "\u6C0F\u540D"
+          type: string
+      type: object
+    PushlogApiKey:
+      properties:
+        pushlog_api_key:
+          maxLength: 512
+          nullable: true
+          type: string
+      type: object
+    ResetToken:
+      properties:
+        token:
+          type: string
+      required:
+      - token
+      type: object
+    TargetTypeEnum:
+      description: "* `electric` - \u96FB\u6C17\n* `water` - \u6C34\n* `fuel` - \u71C3\
+        \u6599\n* `co2` - CO2"
+      enum:
+      - electric
+      - water
+      - fuel
+      - co2
+      type: string
+    TokenObtainPair:
+      properties:
+        access:
+          readOnly: true
+          type: string
+        email:
+          type: string
+          writeOnly: true
+        password:
+          type: string
+          writeOnly: true
+        refresh:
+          readOnly: true
+          type: string
+      required:
+      - access
+      - email
+      - password
+      - refresh
+      type: object
+    TokenRefresh:
+      properties:
+        access:
+          readOnly: true
+          type: string
+        refresh:
+          type: string
+      required:
+      - access
+      - refresh
+      type: object
+    Unit:
+      properties:
+        environmental_type:
+          $ref: '#/components/schemas/EnvirontmentalType'
+        id:
+          readOnly: true
+          type: integer
+        name:
+          maxLength: 100
+          type: string
+      required:
+      - environmental_type
+      - id
+      - name
+      type: object
+    User:
+      properties:
+        company:
+          allOf:
+          - $ref: '#/components/schemas/Company'
+          readOnly: true
+        company_id:
+          format: uuid
+          nullable: true
+          title: "\u4F01\u696D"
+          type: string
+        daily_revenue:
+          format: int64
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          nullable: true
+          title: "1\u65E5\u3042\u305F\u308A\u306E\u58F2\u4E0A"
+          type: integer
+        email:
+          format: email
+          type: string
+        id:
+          format: uuid
+          readOnly: true
+          type: string
+        is_company_admin:
+          readOnly: true
+          type: string
+        is_staff:
+          title: "\u30B9\u30BF\u30C3\u30D5\u6A29\u9650"
+          type: boolean
+        is_superuser:
+          title: "\u7BA1\u7406\u8005\u6A29\u9650"
+          type: boolean
+        password:
+          type: string
+          writeOnly: true
+        username:
+          maxLength: 30
+          title: "\u6C0F\u540D"
+          type: string
+      required:
+      - company
+      - email
+      - id
+      - is_company_admin
+      - password
+      - username
+      type: object
+    UserActivation:
+      properties:
+        token:
+          format: uuid
+          type: string
+      required:
+      - token
+      type: object
+  securitySchemes:
+    jwtAuth:
+      bearerFormat: JWT
+      scheme: bearer
+      type: http
+info:
+  description: "API\u4ED5\u69D8\u66F8"
+  title: "IHI \u53EF\u8996\u5316PF"
+  version: 1.0.0
+openapi: 3.0.3
+paths:
+  /api/schema/:
+    get:
+      description: 'OpenApi3 schema for this API. Format can be selected via content
+        negotiation.
+
+
+        - YAML: application/vnd.oai.openapi
+
+        - JSON: application/vnd.oai.openapi+json'
+      operationId: api_schema_retrieve
+      parameters:
+      - in: query
+        name: format
+        schema:
+          enum:
+          - json
+          - yaml
+          type: string
+      - in: query
+        name: lang
+        schema:
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                additionalProperties: {}
+                type: object
+            application/vnd.oai.openapi:
+              schema:
+                additionalProperties: {}
+                type: object
+            application/vnd.oai.openapi+json:
+              schema:
+                additionalProperties: {}
+                type: object
+            application/yaml:
+              schema:
+                additionalProperties: {}
+                type: object
+          description: ''
+      security:
+      - jwtAuth: []
+      - {}
+      tags:
+      - api
+  /api/v1/companies/{id}/:
+    patch:
+      operationId: api_v1_companies_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCompany'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCompany'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCompany'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/data/:
+    get:
+      operationId: api_v1_data_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DeviceDataPerHour'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    post:
+      operationId: api_v1_data_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceDataPerHour'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DeviceDataPerHour'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DeviceDataPerHour'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceDataPerHour'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/data/dates:
+    get:
+      description: "\u5408\u8A08/\u65E5\u5358\u4F4D"
+      operationId: api_v1_data_dates_list
+      parameters:
+      - description: "\u8868\u793A\u30E2\u30FC\u30C9(\u6A19\u6E96 / \u539F\u5358\u4F4D\
+          )"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: intensity
+        in: query
+        name: mode
+        schema:
+          type: string
+      - description: "\u6708"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: 2
+        in: query
+        name: month
+        required: true
+        schema:
+          type: integer
+      - description: "\u7A2E\u985E"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: total
+        in: query
+        name: type
+        schema:
+          type: string
+      - description: "\u305D\u306E\u6307\u5B9A\u6708(month)\u306E\u9031\u756A\u53F7"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: '1'
+        in: query
+        name: week
+        schema:
+          type: string
+      - description: "\u5E74"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: 2023
+        in: query
+        name: year
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                E.g.1:
+                  summary: e.g.1
+                  value:
+                  - - co2_price: 3000000
+                      co2_value: 2000.0
+                      date: 1
+                      electrical_price: 27000
+                      electrical_value: 1000.0
+                      energy_saving_value: 3009.0
+                      fuel_price: 2030000
+                      fuel_value: 2900.0
+                      get_data_date: '2023-01-01T00:00:00+09:00'
+                      renewal_energy_value: 933.0
+                      water_price: 386000
+                      water_value: 1930.0
+              schema:
+                items:
+                  $ref: '#/components/schemas/DataPerDate'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/data/hours:
+    get:
+      description: "\u5408\u8A08/\u6642\u9593\u5358\u4F4D"
+      operationId: api_v1_data_hours_list
+      parameters:
+      - description: "\u65E5"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: 1
+        in: query
+        name: date
+        required: true
+        schema:
+          type: integer
+      - description: "\u8868\u793A\u30E2\u30FC\u30C9(\u6A19\u6E96 / \u539F\u5358\u4F4D\
+          )"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: intensity
+        in: query
+        name: mode
+        schema:
+          type: string
+      - description: "\u6708"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: 2
+        in: query
+        name: month
+        required: true
+        schema:
+          type: integer
+      - description: "\u7A2E\u985E"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: total
+        in: query
+        name: type
+        schema:
+          type: string
+      - description: "\u5E74"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: 2023
+        in: query
+        name: year
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                E.g.1:
+                  summary: e.g.1
+                  value:
+                  - - co2_price: 4000
+                      co2_value: 400.0
+                      electrical_price: 2700
+                      electrical_value: 100.0
+                      fuel_price: 9000
+                      fuel_value: 300.0
+                      get_data_date: '2023-01-01T01:00:00+09:00'
+                      hour: 1
+                      minute: 0
+                      water_price: 4400
+                      water_value: 200.0
+              schema:
+                items:
+                  $ref: '#/components/schemas/DataPerHour'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/data/months:
+    get:
+      description: "\u5408\u8A08/\u6708\u5358\u4F4D"
+      operationId: api_v1_data_months_list
+      parameters:
+      - description: "\u8868\u793A\u30E2\u30FC\u30C9(\u6A19\u6E96 / \u539F\u5358\u4F4D\
+          )"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: intensity
+        in: query
+        name: mode
+        schema:
+          type: string
+      - description: "\u7A2E\u985E"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: total
+        in: query
+        name: type
+        schema:
+          type: string
+      - description: "\u5E74"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: 2023
+        in: query
+        name: year
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                E.g.1:
+                  summary: e.g.1
+                  value:
+                  - - co2_price: 3000000
+                      co2_value: 2000.0
+                      electrical_price: 27000
+                      electrical_value: 1000.0
+                      energy_saving_value: 3009.0
+                      fuel_price: 2030000
+                      fuel_value: 2900.0
+                      get_data_date: '2023-01-01T00:00:00+09:00'
+                      month: 1
+                      renewal_energy_value: 933.0
+                      water_price: 386000
+                      water_value: 1930.0
+              schema:
+                items:
+                  $ref: '#/components/schemas/DataPerMonth'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/data/predictions/monthly:
+    get:
+      operationId: api_v1_data_predictions_monthly_retrieve
+      responses:
+        '200':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/data/predictions/yearly:
+    get:
+      operationId: api_v1_data_predictions_yearly_retrieve
+      responses:
+        '200':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/data/years:
+    get:
+      description: "\u5408\u8A08/\u5E74\u5358\u4F4D"
+      operationId: api_v1_data_years_list
+      parameters:
+      - description: "\u8868\u793A\u30E2\u30FC\u30C9(\u6A19\u6E96 / \u539F\u5358\u4F4D\
+          )"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: intensity
+        in: query
+        name: mode
+        schema:
+          type: string
+      - description: "\u7A2E\u985E"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: total
+        in: query
+        name: type
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                E.g.1:
+                  summary: e.g.1
+                  value:
+                  - - co2_price: 1485435000
+                      co2_value: 990290.0
+                      electrical_price: 2700000
+                      electrical_value: 100000.0
+                      energy_saving_value: 1000.0
+                      fuel_price: 699999300
+                      fuel_value: 999999.0
+                      get_data_date: '2023-01-01'
+                      renewal_energy_value: 100.0
+                      water_price: 2000000
+                      water_value: 10000.0
+                      year: 2023
+              schema:
+                items:
+                  $ref: '#/components/schemas/DataPerYear'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/data/{id}:
+    delete:
+      operationId: api_v1_data_destroy
+      parameters:
+      - description: "A UUID string identifying this 2-1. \u8A2D\u5099/\u6642\u9593\
+          \u5358\u4F4D."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '204':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    get:
+      operationId: api_v1_data_retrieve
+      parameters:
+      - description: "A UUID string identifying this 2-1. \u8A2D\u5099/\u6642\u9593\
+          \u5358\u4F4D."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceDataPerHour'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    patch:
+      operationId: api_v1_data_partial_update
+      parameters:
+      - description: "A UUID string identifying this 2-1. \u8A2D\u5099/\u6642\u9593\
+          \u5358\u4F4D."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedDeviceDataPerHour'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedDeviceDataPerHour'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedDeviceDataPerHour'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceDataPerHour'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_data_update
+      parameters:
+      - description: "A UUID string identifying this 2-1. \u8A2D\u5099/\u6642\u9593\
+          \u5358\u4F4D."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceDataPerHour'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DeviceDataPerHour'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DeviceDataPerHour'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceDataPerHour'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/device/:
+    post:
+      description: "\u8A2D\u5099\u767B\u9332"
+      operationId: api_v1_device_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Device'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Device'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Device'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/device/dates:
+    get:
+      description: "\u8A2D\u5099/\u65E5\u5358\u4F4D"
+      operationId: api_v1_device_dates_list
+      parameters:
+      - description: "\u6708"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: 2
+        in: query
+        name: month
+        required: true
+        schema:
+          type: integer
+      - description: "\u7A2E\u985E"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: total
+        in: query
+        name: type
+        schema:
+          type: string
+      - description: "\u6307\u5B9A\u6708(month)\u306E\u9031\u756A\u53F7"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: '1'
+        in: query
+        name: week
+        schema:
+          type: string
+      - description: "\u5E74"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: 2023
+        in: query
+        name: year
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                E.g.1:
+                  summary: e.g.1
+                  value:
+                  - - co2_price: 3000000
+                      co2_value: 2000.0
+                      date: 1
+                      electrical_price: 27000
+                      electrical_value: 1000.0
+                      energy_saving_value: 3009.0
+                      fuel_price: 2030000
+                      fuel_value: 2900.0
+                      get_data_date: '2023-01-01T00:00:00+09:00'
+                      renewal_energy_value: 933.0
+                      water_price: 386000
+                      water_value: 1930.0
+              schema:
+                items:
+                  $ref: '#/components/schemas/DeviceDataPerDate'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/device/hours:
+    get:
+      description: "\u8A2D\u5099/\u6642\u9593\u5358\u4F4D"
+      operationId: api_v1_device_hours_list
+      parameters:
+      - description: "\u65E5"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: 1
+        in: query
+        name: date
+        required: true
+        schema:
+          type: integer
+      - description: "\u6708"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: 2
+        in: query
+        name: month
+        required: true
+        schema:
+          type: integer
+      - description: "\u7A2E\u985E"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: total
+        in: query
+        name: type
+        schema:
+          type: string
+      - description: "\u5E74"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: 2023
+        in: query
+        name: year
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                E.g.1:
+                  summary: e.g.1
+                  value:
+                  - - co2_price: 4000
+                      co2_value: 400.0
+                      electrical_price: 2700
+                      electrical_value: 100.0
+                      fuel_price: 9000
+                      fuel_value: 300.0
+                      get_data_date: '2023-01-01T01:00:00+09:00'
+                      hour: 1
+                      minute: 0
+                      water_price: 4400
+                      water_value: 200.0
+              schema:
+                items:
+                  $ref: '#/components/schemas/DeviceDataPerHour'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/device/list:
+    get:
+      operationId: api_v1_device_list_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Device'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/device/months:
+    get:
+      description: "\u8A2D\u5099/\u6708\u5358\u4F4D"
+      operationId: api_v1_device_months_list
+      parameters:
+      - description: "\u8868\u793A\u30E2\u30FC\u30C9(\u6A19\u6E96 / \u539F\u5358\u4F4D\
+          )"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: intensity
+        in: query
+        name: mode
+        schema:
+          type: string
+      - description: "\u7A2E\u985E"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: total
+        in: query
+        name: type
+        schema:
+          type: string
+      - description: "\u5E74"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: 2023
+        in: query
+        name: year
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                E.g.1:
+                  summary: e.g.1
+                  value:
+                  - - co2_price: 3000000
+                      co2_value: 2000.0
+                      electrical_price: 27000
+                      electrical_value: 1000.0
+                      energy_saving_value: 3009.0
+                      fuel_price: 2030000
+                      fuel_value: 2900.0
+                      get_data_date: '2023-01-01T00:00:00+09:00'
+                      month: 1
+                      renewal_energy_value: 933.0
+                      water_price: 386000
+                      water_value: 1930.0
+              schema:
+                items:
+                  $ref: '#/components/schemas/DeviceDataPerMonth'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/device/years:
+    get:
+      description: "\u8A2D\u5099/\u5E74\u5358\u4F4D"
+      operationId: api_v1_device_years_list
+      parameters:
+      - description: "\u7A2E\u985E"
+        examples:
+          E.g.1:
+            summary: e.g.1
+            value: total
+        in: query
+        name: type
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                E.g.1:
+                  summary: e.g.1
+                  value:
+                  - - co2_price: 1485435000
+                      co2_value: 990290.0
+                      electrical_price: 2700000
+                      electrical_value: 100000.0
+                      energy_saving_value: 1000.0
+                      fuel_price: 699999300
+                      fuel_value: 999999.0
+                      get_data_date: '2023-01-01'
+                      renewal_energy_value: 100.0
+                      water_price: 2000000
+                      water_value: 10000.0
+                      year: 2023
+              schema:
+                items:
+                  $ref: '#/components/schemas/DeviceDataPerYear'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/device/{id}:
+    delete:
+      description: "\u8A2D\u5099\u524A\u9664"
+      operationId: api_v1_device_destroy
+      parameters:
+      - description: "A UUID string identifying this m.\u30C7\u30FC\u30BF\u53D6\u5F97\
+          \u5BFE\u8C61."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '204':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    get:
+      description: "\u8A2D\u5099\u8A73\u7D30"
+      operationId: api_v1_device_retrieve
+      parameters:
+      - description: "A UUID string identifying this m.\u30C7\u30FC\u30BF\u53D6\u5F97\
+          \u5BFE\u8C61."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    patch:
+      description: "\u8A2D\u5099\u90E8\u5206\u66F4\u65B0"
+      operationId: api_v1_device_partial_update
+      parameters:
+      - description: "A UUID string identifying this m.\u30C7\u30FC\u30BF\u53D6\u5F97\
+          \u5BFE\u8C61."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedDevice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedDevice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedDevice'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      description: "\u8A2D\u5099\u66F4\u65B0"
+      operationId: api_v1_device_update
+      parameters:
+      - description: "A UUID string identifying this m.\u30C7\u30FC\u30BF\u53D6\u5F97\
+          \u5BFE\u8C61."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Device'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Device'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Device'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/device_types/:
+    get:
+      operationId: api_v1_device_types_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DeviceType'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/device_unit_prices/:
+    get:
+      operationId: api_v1_device_unit_prices_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DeviceUnitPrice'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    post:
+      operationId: api_v1_device_unit_prices_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceUnitPrice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DeviceUnitPrice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DeviceUnitPrice'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceUnitPrice'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/device_unit_prices/{id}/:
+    delete:
+      operationId: api_v1_device_unit_prices_destroy
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    get:
+      operationId: api_v1_device_unit_prices_retrieve
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceUnitPrice'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    patch:
+      operationId: api_v1_device_unit_prices_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedDeviceUnitPrice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedDeviceUnitPrice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedDeviceUnitPrice'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceUnitPrice'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_device_unit_prices_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceUnitPrice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DeviceUnitPrice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DeviceUnitPrice'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceUnitPrice'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/economic_activity_amounts/:
+    get:
+      operationId: api_v1_economic_activity_amounts_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DailyEconomicActivityAmount'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    post:
+      operationId: api_v1_economic_activity_amounts_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DailyEconomicActivityAmount'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/economic_activity_amounts/{id}/:
+    delete:
+      operationId: api_v1_economic_activity_amounts_destroy
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    get:
+      operationId: api_v1_economic_activity_amounts_retrieve
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    patch:
+      operationId: api_v1_economic_activity_amounts_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedDailyEconomicActivityAmount'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedDailyEconomicActivityAmount'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedDailyEconomicActivityAmount'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_economic_activity_amounts_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DailyEconomicActivityAmount'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/economic_activity_types/:
+    get:
+      operationId: api_v1_economic_activity_types_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EconomicActivityType'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    post:
+      operationId: api_v1_economic_activity_types_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EconomicActivityType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/EconomicActivityType'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/EconomicActivityType'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EconomicActivityType'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/economic_activity_types/{id}/:
+    delete:
+      operationId: api_v1_economic_activity_types_destroy
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    get:
+      operationId: api_v1_economic_activity_types_retrieve
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EconomicActivityType'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    patch:
+      operationId: api_v1_economic_activity_types_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedEconomicActivityType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedEconomicActivityType'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedEconomicActivityType'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EconomicActivityType'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_economic_activity_types_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EconomicActivityType'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/EconomicActivityType'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/EconomicActivityType'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EconomicActivityType'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/economic_activity_types/{id}/amounts/{date}/:
+    get:
+      operationId: api_v1_economic_activity_types_amounts_retrieve
+      parameters:
+      - in: path
+        name: date
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    patch:
+      operationId: api_v1_economic_activity_types_amounts_partial_update
+      parameters:
+      - in: path
+        name: date
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedDailyEconomicActivityAmount'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedDailyEconomicActivityAmount'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedDailyEconomicActivityAmount'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_economic_activity_types_amounts_update
+      parameters:
+      - in: path
+        name: date
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DailyEconomicActivityAmount'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyEconomicActivityAmount'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/economic_activity_units/:
+    get:
+      operationId: api_v1_economic_activity_units_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EconomicActivityUnit'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    post:
+      operationId: api_v1_economic_activity_units_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EconomicActivityUnit'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/EconomicActivityUnit'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/EconomicActivityUnit'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EconomicActivityUnit'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/economic_activity_units/{id}/:
+    delete:
+      operationId: api_v1_economic_activity_units_destroy
+      parameters:
+      - description: "A UUID string identifying this m.\u7D4C\u6E08\u6D3B\u52D5\u91CF\
+          \u5358\u4F4D."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '204':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    get:
+      operationId: api_v1_economic_activity_units_retrieve
+      parameters:
+      - description: "A UUID string identifying this m.\u7D4C\u6E08\u6D3B\u52D5\u91CF\
+          \u5358\u4F4D."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EconomicActivityUnit'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    patch:
+      operationId: api_v1_economic_activity_units_partial_update
+      parameters:
+      - description: "A UUID string identifying this m.\u7D4C\u6E08\u6D3B\u52D5\u91CF\
+          \u5358\u4F4D."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedEconomicActivityUnit'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedEconomicActivityUnit'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedEconomicActivityUnit'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EconomicActivityUnit'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_economic_activity_units_update
+      parameters:
+      - description: "A UUID string identifying this m.\u7D4C\u6E08\u6D3B\u52D5\u91CF\
+          \u5358\u4F4D."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EconomicActivityUnit'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/EconomicActivityUnit'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/EconomicActivityUnit'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EconomicActivityUnit'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/gateways/:
+    get:
+      operationId: api_v1_gateways_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Gateway'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    post:
+      operationId: api_v1_gateways_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Gateway'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Gateway'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Gateway'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Gateway'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/gateways/{id}/:
+    delete:
+      operationId: api_v1_gateways_destroy
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    get:
+      operationId: api_v1_gateways_retrieve
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Gateway'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    patch:
+      operationId: api_v1_gateways_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedGateway'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedGateway'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedGateway'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Gateway'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_gateways_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Gateway'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Gateway'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Gateway'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Gateway'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/jcredit/application:
+    get:
+      description: JCreditApplication
+      operationId: api_v1_jcredit_application_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/JCreditApplication'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    post:
+      operationId: api_v1_jcredit_application_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JCreditApplication'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/JCreditApplication'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/JCreditApplication'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JCreditApplication'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/mdevices/:
+    get:
+      operationId: api_v1_mdevices_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/MDevice'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    post:
+      operationId: api_v1_mdevices_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MDevice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MDevice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MDevice'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MDevice'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/mdevices/{id}/:
+    delete:
+      operationId: api_v1_mdevices_destroy
+      parameters:
+      - description: "A UUID string identifying this \u30DE\u30B9\u30BF\u30C7\u30D0\
+          \u30A4\u30B9."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '204':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    get:
+      operationId: api_v1_mdevices_retrieve
+      parameters:
+      - description: "A UUID string identifying this \u30DE\u30B9\u30BF\u30C7\u30D0\
+          \u30A4\u30B9."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MDevice'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    patch:
+      operationId: api_v1_mdevices_partial_update
+      parameters:
+      - description: "A UUID string identifying this \u30DE\u30B9\u30BF\u30C7\u30D0\
+          \u30A4\u30B9."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedMDevice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedMDevice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedMDevice'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MDevice'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_mdevices_update
+      parameters:
+      - description: "A UUID string identifying this \u30DE\u30B9\u30BF\u30C7\u30D0\
+          \u30A4\u30B9."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MDevice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MDevice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MDevice'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MDevice'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/monthly_cost_targets/:
+    get:
+      operationId: api_v1_monthly_cost_targets_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/MonthlyCostTarget'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/monthly_cost_targets/{year}/{month}/{target_type}/:
+    get:
+      operationId: api_v1_monthly_cost_targets_retrieve
+      parameters:
+      - in: path
+        name: month
+        required: true
+        schema:
+          type: integer
+      - in: path
+        name: target_type
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonthlyCostTarget'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    patch:
+      operationId: api_v1_monthly_cost_targets_partial_update
+      parameters:
+      - in: path
+        name: month
+        required: true
+        schema:
+          type: integer
+      - in: path
+        name: target_type
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedMonthlyCostTarget'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedMonthlyCostTarget'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedMonthlyCostTarget'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonthlyCostTarget'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_monthly_cost_targets_update
+      parameters:
+      - in: path
+        name: month
+        required: true
+        schema:
+          type: integer
+      - in: path
+        name: target_type
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: year
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonthlyCostTarget'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MonthlyCostTarget'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MonthlyCostTarget'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonthlyCostTarget'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/notifications/:
+    get:
+      operationId: api_v1_notifications_list
+      parameters:
+      - description: A page number within the paginated result set.
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+      - description: Number of results to return per page.
+        in: query
+        name: page_size
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedNotificationList'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    post:
+      operationId: api_v1_notifications_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Notification'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Notification'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Notification'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Notification'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/notifications/{id}/:
+    get:
+      operationId: api_v1_notifications_retrieve
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Notification'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/password_reset/:
+    post:
+      description: 'An Api View which provides a method to request a password reset
+        token based on an e-mail address
+
+
+        Sends a signal reset_password_token_created when a reset token was created'
+      operationId: api_v1_password_reset_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Email'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Email'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Email'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Email'
+          description: ''
+      tags:
+      - api
+  /api/v1/password_reset/confirm/:
+    post:
+      description: An Api View which provides a method to reset a password based on
+        a unique token
+      operationId: api_v1_password_reset_confirm_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordToken'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PasswordToken'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PasswordToken'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PasswordToken'
+          description: ''
+      tags:
+      - api
+  /api/v1/password_reset/validate_token/:
+    post:
+      description: An Api View which provides a method to verify that a token is valid
+      operationId: api_v1_password_reset_validate_token_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResetToken'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ResetToken'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ResetToken'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResetToken'
+          description: ''
+      tags:
+      - api
+  /api/v1/token/:
+    post:
+      description: 'Takes a set of user credentials and returns an access and refresh
+        JSON web
+
+        token pair to prove the authentication of those credentials.'
+      operationId: api_v1_token_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPair'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenObtainPair'
+          description: ''
+      tags:
+      - api
+  /api/v1/token/refresh/:
+    post:
+      description: 'Takes a refresh type JSON web token and returns an access type
+        JSON web
+
+        token if the refresh token is valid.'
+      operationId: api_v1_token_refresh_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenRefresh'
+          description: ''
+      tags:
+      - api
+  /api/v1/units/:
+    get:
+      operationId: api_v1_units_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Unit'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    post:
+      operationId: api_v1_units_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Unit'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Unit'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Unit'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unit'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/units/{id}/:
+    delete:
+      operationId: api_v1_units_destroy
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    get:
+      operationId: api_v1_units_retrieve
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unit'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    patch:
+      operationId: api_v1_units_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUnit'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUnit'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUnit'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unit'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_units_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Unit'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Unit'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Unit'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unit'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/user/:
+    get:
+      operationId: api_v1_user_retrieve
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/user/change_password/:
+    post:
+      operationId: api_v1_user_change_password_create
+      responses:
+        '200':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/user/daily_revenue/:
+    patch:
+      operationId: api_v1_user_daily_revenue_partial_update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedDailyRevenue'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedDailyRevenue'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedDailyRevenue'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyRevenue'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_user_daily_revenue_update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DailyRevenue'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DailyRevenue'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DailyRevenue'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyRevenue'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/user/pushlog_api_key/:
+    patch:
+      operationId: api_v1_user_pushlog_api_key_partial_update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPushlogApiKey'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPushlogApiKey'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPushlogApiKey'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PushlogApiKey'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_user_pushlog_api_key_update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PushlogApiKey'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PushlogApiKey'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PushlogApiKey'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PushlogApiKey'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/user/reset_password/{uidb64}/{token}/:
+    post:
+      operationId: api_v1_user_reset_password_create
+      parameters:
+      - in: path
+        name: token
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: uidb64
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: No response body
+      security:
+      - jwtAuth: []
+      - {}
+      tags:
+      - api
+  /api/v1/user/reset_password_request/:
+    post:
+      operationId: api_v1_user_reset_password_request_create
+      responses:
+        '200':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/users/:
+    get:
+      operationId: api_v1_users_list
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/User'
+                type: array
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    post:
+      description: "\u30E6\u30FC\u30B6\u4F5C\u6210"
+      operationId: api_v1_users_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+  /api/v1/users/activate/:
+    post:
+      operationId: api_v1_users_activate_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserActivation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserActivation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserActivation'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserActivation'
+          description: ''
+      security:
+      - jwtAuth: []
+      - {}
+      tags:
+      - api
+  /api/v1/users/{id}:
+    delete:
+      operationId: api_v1_users_destroy
+      parameters:
+      - description: "A UUID string identifying this \u30E6\u30FC\u30B6."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '204':
+          description: No response body
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    get:
+      operationId: api_v1_users_retrieve
+      parameters:
+      - description: "A UUID string identifying this \u30E6\u30FC\u30B6."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    patch:
+      operationId: api_v1_users_partial_update
+      parameters:
+      - description: "A UUID string identifying this \u30E6\u30FC\u30B6."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api
+    put:
+      operationId: api_v1_users_update
+      parameters:
+      - description: "A UUID string identifying this \u30E6\u30FC\u30B6."
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+      security:
+      - jwtAuth: []
+      tags:
+      - api

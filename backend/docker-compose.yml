@@ -1,0 +1,44 @@
+version: '3'
+# M1/M2 mac等、amd64/x86_64以外のプラットフォームで動かす場合は かわりに docker-compose_macm1.yml を使ってください。
+# "apt install -y make cmake intel-mkl-64bit-2020.4-912" で落ちる場合はplatformが問題である可能性。
+services:
+  app:
+    container_name: ihi_app
+    build: ./app
+    
+    volumes:
+     - ./app/source:/django
+    ports:
+     - 2343:8000
+    image: app:django
+    command: python manage.py runserver 0.0.0.0:8000 --noreload
+    depends_on:
+      db:
+        condition: service_started
+
+  db:
+    image: postgres:13
+    volumes:
+      - ./database/postgresql:/var/lib/postgresql/data
+      - ./app/source/db_config/postgresql.conf:/etc/postgresql/postgresql.conf
+    environment:
+      - POSTGRES_DB=ihi_db
+      - POSTGRES_USER=ihi
+      - POSTGRES_PASSWORD=ihi
+    ports:
+      - 2849:5432
+    container_name: ihi_postgres
+    command: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    ports:
+        - 8888:80
+    volumes:
+        - ./pgadmin4_data:/var/lib/pgadmin
+    environment:
+        PGADMIN_DEFAULT_EMAIL: r-takahashi@bizfreak.co.jp
+        PGADMIN_DEFAULT_PASSWORD: r-takahashi
+    depends_on:
+      - db
+

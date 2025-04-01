@@ -1,0 +1,10 @@
+{% extends "admin/base_site.html" %}
+
+   {% block content %}
+     <h1>データ取得</h1>
+     <form method="post">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <button type="submit">取得</button>
+     </form>
+   {% endblock %}

@@ -1,0 +1,1 @@
+USER_EMAIL_EXISTS_ERROR = "このメールアドレスは既に登録されています。"

@@ -1,0 +1,10 @@
+{% extends "admin/base_site.html" %}
+
+   {% block content %}
+     <h1>データ取得</h1>
+      {% if messages %}
+        <p>データ取得に失敗しました</p>
+      {% else %}
+        <p>データ取得処理を開始しました。完了には時間がかかる場合があります。</p>
+      {% endif %}
+   {% endblock %}

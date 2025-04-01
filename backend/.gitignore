@@ -1,0 +1,16 @@
+__pycache__/
+*.env
+*.log
+/app/source/app.log
+/app/source/logs/*
+!/app/source/logs/.gitkeep
+/database
+/app/source/static
+app/source/ihiapp/access_token.txt
+/pgadmin4_data/
+ihi_back_dump.json
+
+excel_output/
+
+node_modules/
+```

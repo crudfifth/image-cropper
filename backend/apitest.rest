@@ -1,0 +1,90 @@
+###
+
+POST http://localhost:2343/api/v1/token/
+Content-Type: application/json
+
+{"email":"k-abe@bizfreak.co.jp" , "password":"12345678"}
+
+###
+POST http://localhost:2343/api/v1/jcredit/application
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwMDU5MjUxLCJpYXQiOjE2ODAwNTkzMTEsImp0aSI6IjA1NmFjNjM5ZWRkYzQ2MTc4MzljMTRhZTI0ZDZiM2IzIiwidXNlcl9pZCI6IjdiYTI3YWM2LTYzZTItNDI3YS04MTFhLThhMDQyMGMzODllYSJ9.oxEkncK8KR1vd0yztBgqOcJ_OiAeuMtpm0_SCHuNf08
+
+{
+    "electrical_value" : "" ,
+    "electrical_price" : "" ,
+    "water_value" : "" ,
+    "water_price" : "" ,
+    "fuel_value" : "" ,
+    "fuel_price" : "" ,
+    "co2_value" : "" ,
+    "co2_price" : "" ,
+    "energy_saving_value" : "" ,
+    "renewal_energy_value" : "" ,
+    "utility_costs" : "" ,
+    "get_data_date" : "2022-12-31 15:00:00+00" ,
+    "created_at" : "2023-03-28 06:34:00.73622+00" ,
+    "application_date" : "2020-04-01" ,
+    "member_name" : "○○温泉byPOST" ,
+    "member_postal_code" : "000-0000" ,
+    "member_address" : "群馬県○○市△△xx-xx" ,
+    "member_phone_number" : "xx-xxxx-1111" ,
+    "installation_postal_code" : "000-0000" ,
+    "installation_address" : "群馬県○○市△△xx-xx" ,
+    "keidanren_carbon_neutral_participation" : "FALSE" ,
+    "energy_conservation_law_specified_business_number" : "11111" ,
+    "global_warming_countermeasures_specified_emitter_code" : "0" ,
+    "base_manufacturer_name" : "〇〇工業" ,
+    "base_model" : "abcde" ,
+    "base_quantity" : "1" ,
+    "base_output" : "200kW" ,
+    "base_unit_heat_gen_of_fossil_fuel_in_base_boiler" : "高位発熱量基準" ,
+    "base_efficiency_percentage" : "89" ,
+    "base_efficiency_of_standard_equipment_percentage" : "90" ,
+    "base_fuel_type" : "灯油" ,
+    "base_legal_service_life_years" : "15" ,
+    "base_installation_date" : "2008-06-25" ,
+    "base_operation_end_date" : "2019-07-24" ,
+    "base_years_of_operation" : "11" ,
+    "updated_manufacturer_name" : "△△機械" ,
+    "updated_model" : "abcde" ,
+    "updated_quantity" : "1" ,
+    "updated_unique_number" : "abcde-12345" ,
+    "updated_output" : "200ｋW" ,
+    "updated_unit_heat_gen_of_fossil_fuel_in_base_boiler" : "高位発熱量基準" ,
+    "updated_efficiency_percentage" : "95" ,
+    "updated_fuel_type" : "都市ガス" ,
+    "eval_investment_recovery_years" : "21.7" ,
+    "eval_total_investment_amount" : "25000000" ,
+    "eval_subsidy_amount" : "20000000" ,
+    "eval_net_investment_amount" : "5000000" ,
+    "eval_running_cost_before_implementation" : "1670684" ,
+    "eval_running_cost_after_implementation" : "1440000" ,
+    "eval_baseline_fuel_unit_price_per_month" : "15000" ,
+    "eval_post_implementation_fuel_unit_price_per_month" : "120000" ,
+    "eval_existing_maintenance_cost_per_year" : "10000000" ,
+    "eval_post_implementation_maintenance_cost_per_year" : "8000000" ,
+    "eval_documentation" : "補助金交付決定通知書" ,
+    "eval_subsidy_name" : "・・・" ,
+    "eval_granting_organization_of_subsidy" : "・・・" ,
+    "eval_domestically_implemented_in_japan" : "TRUE" ,
+    "operating_start_date" : "2020-04-01" ,
+    "certify_start_date" : "2020-04-01" ,
+    "certify_end_date" : "2028-03-31" ,
+    "requirement_implemented_in_japan" : "TRUE" ,
+    "requirement_project_execution_date" : "TRUE" ,
+    "requirement_certification_start_date" : "TRUE" ,
+    "requirement_equipment_efficiency_higher_than_standard" : "TRUE" ,
+    "requirement_additivity" : "TRUE" ,
+    "unit_heat_gen_of_fossil_fuels_in_base_boiler" : "38.9" ,
+    "co2_per_unit_heat_ge_fuels_in_base_boiler" : "0.0686" ,
+    "unit_heat_gen_of_fuel_used_in_boiler_after_project_exec" : "45.1" ,
+    "co2_per_unit_heat_ge_fuels_used_in_boiler_after_exec" : "0.0513" ,
+    "monitoring_period_in_months" : "12" ,
+    "monitoring_measurement_value_of_fuel_consumption" : "100" ,
+    "monitoring_classification" : "分類C：概算" ,
+    "monitoring_measurement_error_rate_in_c" : "10" ,
+    "monitoring_final_value" : "90" 
+}
+
+###
